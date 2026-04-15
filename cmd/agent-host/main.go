@@ -26,6 +26,7 @@ import (
 	"github.com/ghcp-iac/ghcp-iac-workflow/agents/security"
 	"github.com/ghcp-iac/ghcp-iac-workflow/internal/auth"
 	"github.com/ghcp-iac/ghcp-iac-workflow/internal/config"
+	"github.com/ghcp-iac/ghcp-iac-workflow/internal/dashboard"
 	"github.com/ghcp-iac/ghcp-iac-workflow/internal/host"
 	"github.com/ghcp-iac/ghcp-iac-workflow/internal/llm"
 	"github.com/ghcp-iac/ghcp-iac-workflow/internal/protocol"
@@ -174,6 +175,10 @@ func runHTTP(cfg *config.Config, registry *host.Registry, dispatcher *host.Dispa
 			"agents":      len(registry.List()),
 		})
 	})
+
+	// Dashboard API + UI
+	dash := dashboard.New(cfg)
+	dash.Register(mux)
 
 	port := cfg.Port
 	if port == "" {

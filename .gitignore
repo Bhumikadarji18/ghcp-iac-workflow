@@ -21,7 +21,7 @@ gh-iac
 .idea/
 
 # OS
-.DS_Store
+.DS_Store   
 Thumbs.db
 
 # Logs
@@ -31,3 +31,5 @@ Thumbs.db
 coverage.out
 coverage.html
 linkedin-post.md
+
+.env
