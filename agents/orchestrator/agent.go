@@ -200,7 +200,9 @@ func classifyKeywords(message string) Intent {
 		keywords []string
 	}{
 		{IntentAnalyze, []string{"scan", "audit", "review", "analyze", "security", "policy", "compliance", "vulnerability", "check", "full"}},
-		{IntentCost, []string{"cost", "price", "pricing", "estimate", "budget", "expensive", "spending"}},
+		{IntentCost, []string{"cost", "price", "pricing", "estimate", "budget", "expensive", "spending",
+			"rightsiz", "right-siz", "cpu usage", "underutiliz", "vm recommendation", "downsize",
+			"idle", "unused", "orphan", "waste", "unattached", "advisor", "recommendation"}},
 		{IntentOps, []string{"deploy", "promote", "drift", "release", "rollback", "environment", "staging", "production", "notify", "notification"}},
 		{IntentHelp, []string{"help", "how to", "what can", "usage", "guide", "capabilities", "status", "health"}},
 	}

@@ -58,7 +58,7 @@ func main() {
 	registry.Register(policy.New(policy.WithLLM(llmClient)))
 	registry.Register(security.New(security.WithLLM(llmClient)))
 	registry.Register(compliance.New(compliance.WithLLM(llmClient)))
-	registry.Register(cost.New(cost.WithLLM(llmClient)))
+	registry.Register(cost.New(cost.WithLLM(llmClient), cost.WithAzureConfig(cfg)))
 	registry.Register(drift.New())
 	registry.Register(deploy.New())
 	registry.Register(notification.New(cfg.EnableNotifications))
